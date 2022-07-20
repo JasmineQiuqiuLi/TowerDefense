@@ -13,6 +13,6 @@ public class WayPoints : MonoBehaviour
         {
             positions[i] = transform.GetChild(i);
         }
-        //Debug.Log(positions.Length+"positions");
+        
     }
 }

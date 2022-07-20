@@ -8,7 +8,7 @@ public class TurretAttack : MonoBehaviour
     public float bulletForce;//force apply to the bullet
 
     private float timer;
-    private float interval = 1.0f;
+    private float interval = 1.0f; //the standard turret and missile fire bullet every 1 second.
 
     
     public List<GameObject> enemyWithinRange;
@@ -38,7 +38,7 @@ public class TurretAttack : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.isGamOver)
+        if (!GameManager.instance.IsGameOver)
         {
             timer += Time.deltaTime;
 

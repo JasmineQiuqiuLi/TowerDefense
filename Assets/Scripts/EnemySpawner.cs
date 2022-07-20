@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
            
         }
 
-        if (!GameManager.isGamOver)
+        if (!GameManager.instance.IsGameOver)
         {
             aliveEnemiesInHierachy = GameObject.FindGameObjectsWithTag("Enemy");
             if (index >= 4) return;

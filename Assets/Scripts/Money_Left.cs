@@ -19,7 +19,7 @@ public class Money_Left : MonoBehaviour
     }
     public void UpdateTextUI()
     {
-        money_Left.text = "Money:\n" + TurretSpawner.Money.ToString();
+        money_Left.text = "Money:\n" +"$"+ TurretSpawner.instance.Money.ToString();
     }
 
     public void PlayTextEffect()

@@ -12,13 +12,16 @@ public class GameManager: MonoBehaviour
     public Text gameResultText;
     public GameObject replayButton;
     public GameObject menuButton;
-    public static bool isGamOver;
+
+    bool isGamOver;
+    public bool IsGameOver { get { return isGamOver; } }
+
     public static GameManager instance;
  
 
     private void Awake()
     {
-        //gameResultPanel.SetActive(false);
+       
         isGamOver = false;
         instance = this;
     }

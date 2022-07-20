@@ -5,19 +5,18 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    private int index = 0;
-    Transform[] targets;
+    
+    Transform[] targets; //Transform arrays that show enemy movement direction
+    private int index = 0; //the index of the target that the enemy is moving towards
     private float speed=20;
+
     private float health;
     public float maxHealth;
-    public Slider healthSlider;
-    private bool isCalled;
-    
+    public Slider healthSlider; //health slider
 
-    private void Awake()
-    {
-        //targets = WayPoints.positions;
-    }
+    private bool isCalled; //make sure DecreaseHealth function only called once.
+
+
     private void Start()
     {
         targets = WayPoints.positions;
@@ -56,7 +55,7 @@ public class Enemy : MonoBehaviour
         {
             isCalled = true;
             Destroy(gameObject);
-            Debug.Log("the game object is destroyed");
+           
             EnemySpawner.instance.DecreaseEnemyCount();
         }
         updateHealthUI();

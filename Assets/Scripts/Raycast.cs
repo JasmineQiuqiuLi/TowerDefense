@@ -18,7 +18,7 @@ public class Raycast : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100.0f))
         {
             if(preRender!=null) preRender.sharedMaterial = preMaterial;
-            //Debug.Log(hit.collider.gameObject.name);
+            
             if (EventSystem.current.IsPointerOverGameObject()==false && hit.collider.CompareTag("Cube"))
             {
                 currHitCube = hit.collider.gameObject;

@@ -7,7 +7,10 @@ public class TurretSpawner : MonoBehaviour
     public Dictionary<GameObject, GameObject> cubes = new Dictionary<GameObject, GameObject>();
     public Turrets[] turrets;
     public static TurretSpawner instance;
-    public static float Money;
+
+    float money;
+    public float Money { get { return money; } }
+
     public ParticleSystem buildEffect;
 
 
@@ -15,7 +18,7 @@ public class TurretSpawner : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        Money = 500;
+        money = 250;
 
         int cubeCount = transform.childCount;
         for(int i = 0; i < cubeCount; i++)
@@ -56,7 +59,7 @@ public class TurretSpawner : MonoBehaviour
                     }
                     else //does not have enough money
                     {
-                        //Debug.Log("do not have enough moeny");
+                       
                         Money_Left.instance.PlayTextEffect();
 
                     }
@@ -104,7 +107,7 @@ public class TurretSpawner : MonoBehaviour
 
     void UpgradeMoneyUI(float cost)
     {
-        Money -= cost;
+        money -= cost;
         //Debug.Log("turret's costupgraded is " + turret.costUpgraded);
         Money_Left.instance.UpdateTextUI();
     }

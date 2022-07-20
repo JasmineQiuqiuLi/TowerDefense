@@ -64,7 +64,7 @@ public class UpgradeCanvas : MonoBehaviour
 
         if (TurretSpawner.instance.cubes[Raycast.currHitCube].tag == "Upgraded")
         {
-           // Debug.Log("curreent turret is upgraded");
+          
             upgradeButton.interactable = false;
         }
         else
